@@ -1,0 +1,64 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medical Dose Reports</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-white shadow-md sticky top-0 z-10">
+    <div class="max-w-5xl mx-auto p-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-600">Radiology Dose Reports</h1>
+      <nav>
+        <a href="#ct" class="text-sm mx-2 text-blue-500 hover:underline">CT</a>
+        <a href="#xray" class="text-sm mx-2 text-blue-500 hover:underline">X-Ray</a>
+        <a href="#stats" class="text-sm mx-2 text-blue-500 hover:underline">Stats</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-6 space-y-10">
+    
+    <section id="ct">
+      <h2 class="text-xl font-semibold mb-2">CT Dose Report</h2>
+      <p class="mb-4 text-sm text-gray-600">Summary of patient CT dose with key metrics like CTDIvol and DLP.</p>
+      <img src="assets/ct=dpse.PNG" alt="CT Dose Summary" class="w-full rounded shadow-md cursor-pointer" onclick="openImage(this.src)" />
+    </section>
+
+    <section id="xray">
+      <h2 class="text-xl font-semibold mb-2">X-Ray Dose Metrics</h2>
+      <p class="mb-4 text-sm text-gray-600">Shows X-ray exam dose levels, useful for skin dose estimation.</p>
+      <img src="assets/x-ray-dose.PNG" alt="X-Ray Dose Info" class="w-full rounded shadow-md cursor-pointer" onclick="openImage(this.src)" />
+    </section>
+
+    <section id="stats">
+      <h2 class="text-xl font-semibold mb-2">Dose Statistics & DRLs</h2>
+      <p class="mb-4 text-sm text-gray-600">Compare your imaging center’s performance to national Diagnostic Reference Levels.</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <img src="assets/stats-drls.PNG" alt="DRL Stats" class="w-full rounded shadow-md cursor-pointer" onclick="openImage(this.src)" />
+        <img src="assets/report.PNG" alt="Dose Report" class="w-full rounded shadow-md cursor-pointer" onclick="openImage(this.src)" />
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center py-4 text-xs text-gray-500">
+    &copy; 2025 Radiology Dose Viewer | Hosted on GitHub Pages
+  </footer>
+
+  <!-- Lightbox Script -->
+  <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 hidden justify-center items-center z-50" onclick="closeImage()">
+    <img id="lightbox-img" class="max-w-3xl max-h-[90vh] rounded shadow-lg" />
+  </div>
+  <script>
+    function openImage(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+    function closeImage() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
