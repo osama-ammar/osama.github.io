@@ -1,50 +1,100 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Medical Dose Reports</title>
+  <title>Radiology Dose Reports</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
-  <header class="bg-white shadow-md sticky top-0 z-10">
-    <div class="max-w-5xl mx-auto p-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-blue-600">Radiology Dose Reports</h1>
-      <nav>
-        <a href="#ct" class="text-sm mx-2 text-blue-500 hover:underline">CT</a>
-        <a href="#xray" class="text-sm mx-2 text-blue-500 hover:underline">X-Ray</a>
-        <a href="#stats" class="text-sm mx-2 text-blue-500 hover:underline">Stats</a>
+<body class="bg-white text-gray-800">
+  <header class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg sticky top-0 z-10">
+    <div class="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
+      <h1 class="text-3xl font-extrabold">DoseCheck</h1>
+      <nav class="space-x-6 text-sm">
+        <a href="#overview" class="hover:underline">Overview</a>
+        <a href="#features" class="hover:underline">Features</a>
+        <a href="#gallery" class="hover:underline">Gallery</a>
+        <a href="#contact" class="hover:underline">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="max-w-5xl mx-auto px-4 py-6 space-y-10">
-    
-    <section id="ct">
-      <h2 class="text-xl font-semibold mb-2">CT Dose Report</h2>
-      <p class="mb-4 text-sm text-gray-600">Summary of patient CT dose with key metrics like CTDIvol and DLP.</p>
-      <img src="assets/ct=dpse.PNG" alt="CT Dose Summary" class="w-full rounded shadow-md cursor-pointer" onclick="openImage(this.src)" />
-    </section>
-
-    <section id="xray">
-      <h2 class="text-xl font-semibold mb-2">X-Ray Dose Metrics</h2>
-      <p class="mb-4 text-sm text-gray-600">Shows X-ray exam dose levels, useful for skin dose estimation.</p>
-      <img src="assets/x-ray-dose.PNG" alt="X-Ray Dose Info" class="w-full rounded shadow-md cursor-pointer" onclick="openImage(this.src)" />
-    </section>
-
-    <section id="stats">
-      <h2 class="text-xl font-semibold mb-2">Dose Statistics & DRLs</h2>
-      <p class="mb-4 text-sm text-gray-600">Compare your imaging center’s performance to national Diagnostic Reference Levels.</p>
-      <div class="grid md:grid-cols-2 gap-6">
-        <img src="assets/stats-drls.PNG" alt="DRL Stats" class="w-full rounded shadow-md cursor-pointer" onclick="openImage(this.src)" />
-        <img src="assets/report.PNG" alt="Dose Report" class="w-full rounded shadow-md cursor-pointer" onclick="openImage(this.src)" />
+  <section class="bg-gray-50 py-16" id="overview">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-4xl font-bold mb-4 text-gray-900">Instant Dose Report Access</h2>
+        <p class="text-lg text-gray-600 mb-6">
+          View, compare, and analyze dose reports for CT and X-Ray exams. Designed for radiologists, technologists, and dose tracking professionals.
+        </p>
+        <a href="#gallery" class="inline-block bg-blue-600 text-white font-medium px-6 py-3 rounded-full shadow hover:bg-blue-700 transition">Explore Reports</a>
       </div>
-    </section>
-  </main>
+      <div>
+        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_Tq2ywe.json" background="transparent" speed="1" style="width: 100%; height: 300px;" loop autoplay></lottie-player>
+      </div>
+    </div>
+  </section>
 
-  <footer class="text-center py-4 text-xs text-gray-500">
-    &copy; 2025 Radiology Dose Viewer | Hosted on GitHub Pages
+  <section class="py-16 bg-white" id="features">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-10 text-gray-800">Why Use DoseCheck?</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">📊 DRL Comparison</h3>
+          <p class="text-sm text-gray-600">Easily compare patient doses against national Diagnostic Reference Levels.</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">🧠 Smart Visualization</h3>
+          <p class="text-sm text-gray-600">Interactive reports with highlights on key dose parameters.</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">🔒 Easy to Access</h3>
+          <p class="text-sm text-gray-600">No login required. Open access for teams and students.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50" id="gallery">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">Dose Report Gallery</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="font-semibold mb-2">CT Dose Summary</h3>
+          <img src="assets/ct=dpse.PNG" alt="CT Dose Summary" class="rounded-lg shadow-lg cursor-pointer hover:scale-105 transition" onclick="openImage(this.src)" />
+        </div>
+        <div>
+          <h3 class="font-semibold mb-2">X-Ray Dose Info</h3>
+          <img src="assets/x-ray-dose.PNG" alt="X-Ray Dose" class="rounded-lg shadow-lg cursor-pointer hover:scale-105 transition" onclick="openImage(this.src)" />
+        </div>
+        <div>
+          <h3 class="font-semibold mb-2">Statistics vs DRLs</h3>
+          <img src="assets/stats-drls.PNG" alt="Stats DRL" class="rounded-lg shadow-lg cursor-pointer hover:scale-105 transition" onclick="openImage(this.src)" />
+        </div>
+        <div>
+          <h3 class="font-semibold mb-2">Dose Report Overview</h3>
+          <img src="assets/report.PNG" alt="Report" class="rounded-lg shadow-lg cursor-pointer hover:scale-105 transition" onclick="openImage(this.src)" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white" id="contact">
+    <div class="max-w-2xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Have Questions?</h2>
+      <p class="mb-6 text-gray-600">Feel free to reach out for collaborations, suggestions, or improvements.</p>
+      <a href="mailto:your@email.com" class="inline-block bg-indigo-600 text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-indigo-700 transition">Contact Me</a>
+    </div>
+  </section>
+
+  <footer class="text-center py-6 text-sm text-gray-500">
+    &copy; 2025 DoseCheck | Built with ❤️ by a Radiology Enthusiast | Hosted on GitHub Pages
   </footer>
 
   <!-- Lightbox Script -->
