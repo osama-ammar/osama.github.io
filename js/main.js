@@ -1,0 +1,20 @@
+// Main JavaScript functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize all components
+    initParticles();
+    initCounters();
+    initFeatureDisplay();
+    initSmoothScroll();
+});
+
+// Smooth scrolling
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+} 
